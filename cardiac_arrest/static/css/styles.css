@@ -1,0 +1,16 @@
+body {
+    background: linear-gradient(to bottom, #e6f0fa, #ffffff);
+}
+
+header, footer {
+    background: linear-gradient(90deg, #1e3a8a, #3b82f6);
+}
+
+#videoStream {
+    max-height: 500px;
+    object-fit: contain;
+}
+
+#alertModal {
+    z-index: 1000;
+}

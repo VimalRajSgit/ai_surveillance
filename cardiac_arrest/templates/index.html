@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardiac Arrest Detection System</title>
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Header -->
+    <header class="bg-blue-600 text-white py-4 shadow-md">
+        <div class="container mx-auto text-center">
+            <h1 class="text-3xl font-bold">Cardiac Arrest Detection System</h1>
+            <p class="mt-2 text-lg">A Real-Time Monitoring Solution for Emergency Medical Situations</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto mt-8 p-4">
+        <!-- Upload Section -->
+        <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-semibold text-blue-600 mb-4">Upload Video for Analysis</h2>
+            <div class="flex flex-col items-center">
+                <input type="file" id="videoUpload" accept="video/*" class="mb-4 p-2 border rounded">
+                <button onclick="uploadVideo()" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition duration-300">
+                    Upload and Analyze
+                </button>
+            </div>
+        </section>
+
+        <!-- Video Display Section -->
+        <section id="videoSection" class="hidden bg-white rounded-lg shadow-md p-6">
+            <h2 class="text-2xl font-semibold text-blue-600 mb-4">Video Analysis</h2>
+            <div class="flex justify-center">
+                <img id="videoStream" alt="Video Stream" class="rounded-lg shadow-inner max-w-full">
+            </div>
+        </section>
+    </main>
+
+    <!-- Alert Modal -->
+    <div id="alertModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+        <div class="bg-white rounded-lg p-6 max-w-sm w-full text-center">
+            <h3 class="text-xl font-bold text-red-600 mb-4">🚨 Alert</h3>
+            <p class="text-lg text-gray-700 mb-4">Cardiac Arrest Detected!</p>
+            <button onclick="closeAlert()" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-blue-600 text-white py-4 mt-8">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2025 Cardiac Arrest Detection System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
